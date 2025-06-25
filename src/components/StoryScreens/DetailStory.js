@@ -21,7 +21,7 @@ const DetailStory = () => {
       let activeUser = {};
 
       try {
-        const { data } = await axios.get("/auth/private", {
+        const { data } = await axios.get("https://blog-app-backend-liard.vercel.app/auth/private", {
           headers: {
             "Content-Type": "application/json",
             authorization: `Bearer ${localStorage.getItem("authToken")}`,
@@ -34,7 +34,7 @@ const DetailStory = () => {
       }
 
       try {
-        const { data } = await axios.post(`/story/${slug}`, { activeUser });
+        const { data } = await axios.post(`https://blog-app-backend-liard.vercel.app/story/${slug}`, { activeUser });
         setStory(data.data);
         setLoading(false);
 
